@@ -3,86 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Розумний Бюджетний Консультант</title>
-    <link rel="stylesheet" href="style.css">
+    <title>SmartBudget на React.js</title>
+    
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="dashboard">
-    <div class="header">
-        <h2>SmartBudget</h2>
-        <p>Персональний фінансовий аналіз у реальному часі</p>
-    </div>
-    
-    <div class="main-content">
-        <div class="inputs-column">
-            <div class="card">
-                <h3>Вхідні дані</h3>
-                
-                <div class="form-group">
-                    <div class="label-row">
-                        <label for="salary-num">Ваша зарплата (грн/міс):</label>
-                        <input type="number" id="salary-num" min="5000" max="150000" value="30000" oninput="syncInputs('salary', 'num')">
-                    </div>
-                    <input type="range" id="salary-range" min="5000" max="150000" step="500" value="30000" oninput="syncInputs('salary', 'range')">
-                </div>
+    <div id="root"></div>
 
-                <div class="form-group">
-                    <div class="label-row">
-                        <label for="savings-num">Скільки хочете відкладати (грн/міс):</label>
-                        <input type="number" id="savings-num" min="0" max="100000" value="5000" oninput="syncInputs('savings', 'num')">
-                    </div>
-                    <input type="range" id="savings-range" min="0" max="100000" step="200" value="5000" oninput="syncInputs('savings', 'range')">
-                </div>
-
-                <div class="form-group">
-                    <div class="label-row">
-                        <label for="credit-num">Щомісячний кредит (грн):</label>
-                        <input type="number" id="credit-num" min="0" max="30000" value="0" oninput="syncInputs('credit', 'num')">
-                    </div>
-                    <input type="range" id="credit-range" min="0" max="30000" step="100" value="0" oninput="syncInputs('credit', 'range')">
-                </div>
-
-                <div class="form-group">
-                    <div class="label-row">
-                        <label for="installment-num">Платіж за розстрочку (грн):</label>
-                        <input type="number" id="installment-num" min="0" max="20000" value="0" oninput="syncInputs('installment', 'num')">
-                    </div>
-                    <input type="range" id="installment-range" min="0" max="20000" step="100" value="0" oninput="syncInputs('installment', 'range')">
-                </div>
-            </div>
-
-            <div class="card target-card">
-                <h3>🎯 Велика фінансова ціль</h3>
-                <div class="form-group">
-                    <div class="label-row">
-                        <label for="target-num">Вартість вашої мети (грн):</label>
-                        <input type="number" id="target-num" min="0" max="1000000" value="50000" oninput="syncInputs('target', 'num')">
-                    </div>
-                    <input type="range" id="target-range" min="0" max="1000000" step="1000" value="50000" oninput="syncInputs('target', 'range')">
-                </div>
-            </div>
-        </div>
-
-        <div class="results-column">
-            <div class="card chart-card" id="chart-box">
-                <h3>Розподіл ваших коштів</h3>
-                <div class="chart-wrapper">
-                    <canvas id="budgetChart"></canvas>
-                </div>
-            </div>
-
-            <div class="card result-card" id="result-box">
-                </div>
-
-            <div class="card result-card" id="recommendation-box">
-                </div>
-        </div>
-    </div>
-</div>
-
-<script src="script.js"></script>
+    <script type="text/babel" src="script.js"></script>
 </body>
 </html>
